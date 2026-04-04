@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hox Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+
+    <header class="max-w-5xl mx-auto px-6 py-16 border-b border-gray-800">
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-400 mb-4">Mohammed Azzam or Hox</h1>
+        <h2 class="text-xl text-gray-400 mb-6">Software Engineering Student | UI/UX Designer</h2>
+        <p class="text-lg text-gray-300 max-w-2xl leading-relaxed">
+            Welcome to my portfolio! I am a Software Engineering student with a strong foundation in Object-Oriented Programming (Java) and Data Structures, along with a keen interest in UI/UX design. My work combines clean system architecture with engaging user experiences, alongside a growing portfolio of web applications. I am a strong believer in continuous learning and never stop exploring new technologies. Below are a few of my recent projects.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <h3 class="text-2xl font-semibold text-white mb-8">Featured Projects</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-colors">
+                <div class="aspect-video w-full bg-black">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/G_n28xgDdoE" title="CS50 Final Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-blue-300 mb-2">CS50 Questions Web Application</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        A comprehensive web application developed as a graduation project for the CS50 course at Harvard University. It helps students practice by making questions and testing themselves.</p>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">Python/Flask</span>
+                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-green-500 transition-colors">
+                <div class="relative w-full aspect-video bg-gray-900 group">
+                        
+                    <div id="slide-counter" class="absolute top-3 right-3 bg-black/70 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full z-20 pointer-events-none shadow-lg border border-gray-600 backdrop-blur-sm">
+                        🔍 1 / 5
+                    </div>
+
+                    <img src="cafeUi/Home.jpg" alt="Cafe UI Home" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-100 z-10" onclick="openModal(this.src)">
+                    <img src="cafeUi/pay.jpg" alt="Cafe UI Payment" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
+                    <img src="cafeUi/cart.jpg" alt="Cafe UI cart" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
+                    <img src="cafeUi/products.jpg" alt="Cafe UI products" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
+                    <img src="cafeUi/example of product.jpg" alt="Cafe UI example of product" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
+
+                    <button onclick="prevSlide(event)" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/60 text-white w-10 h-10 rounded-full hover:bg-black hover:scale-110 transition-all z-20 flex items-center justify-center font-bold shadow-lg border border-gray-600">
+                        &#10094;
+                    </button>
+                    
+                    <button onclick="nextSlide(event)" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/60 text-white w-10 h-10 rounded-full hover:bg-black hover:scale-110 transition-all z-20 flex items-center justify-center font-bold shadow-lg border border-gray-600">
+                        &#10095;
+                    </button>
+                </div>
+
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-green-300 mb-2">Cafe Store UI Design</h4>
+                    <p class="text-gray-400 text-sm mb-4">A complete, user-centric interface designed in Figma. Features intuitive wireframes and high-fidelity mockups for a home page and secure payment portal.</p>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">Figma</span>
+                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors flex flex-col justify-between">
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-purple-300 mb-2">C-Thread Simulator</h4>
+                    <p class="text-gray-400 text-sm mb-6">An interactive web page designed to visually explain thread creation and the `fork()` and `wait()` commands in the C programming language.</p>
+                    <div class="flex gap-2 mb-6">
+                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">C Language</span>
+                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">OS Concepts</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-auto">
+                    <a href="https://hoxdev.github.io/Fork-WaitSimulator/" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center py-2 px-4 bg-purple-600 hover:bg-purple-500 text-white rounded transition-colors font-medium">
+                        View Live Simulation 
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/95 hidden flex justify-center items-center p-4 sm:p-8 backdrop-blur-sm transition-opacity" onclick="closeModal()">
+        <button class="absolute top-6 right-8 text-white text-5xl hover:text-red-500 transition-colors">&times;</button>
+        <img id="modal-image" src="" alt="Enlarged UI" class="max-w-full max-h-full rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <footer class="text-center py-8 text-gray-600 text-sm">
+        <p>Made by Hox <span class="text-red-500">❤️</span></p>
+    </footer>
+
+    <script>
+        // --- Carousel Logic ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.cafe-slide');
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.remove('opacity-0', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.add('opacity-0', 'z-0');
+                    slide.classList.remove('opacity-100', 'z-10');
+                }
+            });
+            document.getElementById('slide-counter').innerText = `🔍 ${currentSlide + 1} / ${slides.length}`;
+        }
+
+        function nextSlide(event) {
+            event.stopPropagation(); // Stops the modal from opening when clicking the arrow
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+
+        function prevSlide(event) {
+            event.stopPropagation();
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+
+        // --- Full Screen Modal Logic ---
+        function openModal(imageSrc) {
+            document.getElementById('modal-image').src = imageSrc;
+            document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
