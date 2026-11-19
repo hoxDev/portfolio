@@ -1,140 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hox Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hox — Mohammed Azzam · Software Engineer & UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Mohammed Azzam (Hox): Software Engineering student and UI/UX designer building clean systems and engaging interfaces.">
+  <meta name="theme-color" content="#0a0c11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hox — Mohammed Azzam">
+  <meta property="og:description" content="Software Engineering student & UI/UX designer. Clean systems, engaging interfaces.">
+  <meta property="og:image" content="cafeUi/web/home-1600.webp">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Apply saved / system theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="max-w-5xl mx-auto px-6 py-16 border-b border-gray-800">
-        <h1 class="text-4xl md:text-5xl font-bold text-blue-400 mb-4">Mohammed Azzam or Hox</h1>
-        <h2 class="text-xl text-gray-400 mb-6">Software Engineering Student | UI/UX Designer</h2>
-        <p class="text-lg text-gray-300 max-w-2xl leading-relaxed">
-            Welcome to my portfolio! I am a Software Engineering student with a strong foundation in Object-Oriented Programming (Java) and Data Structures, along with a keen interest in UI/UX design. My work combines clean system architecture with engaging user experiences, alongside a growing portfolio of web applications. I am a strong believer in continuous learning and never stop exploring new technologies. Below are a few of my recent projects.
-        </p>
-    </header>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo" aria-label="Hox — back to top">
+        <span class="nav__logo-mark" aria-hidden="true">H</span>
+        <span>hox<span class="accent">.</span></span>
+      </a>
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
-        <h3 class="text-2xl font-semibold text-white mb-8">Featured Projects</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <nav class="nav__menu" id="nav-menu" aria-label="Primary">
+        <a href="#work" class="nav__link">Work</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
 
-            <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-colors">
-                <div class="aspect-video w-full bg-black">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/G_n28xgDdoE" title="CS50 Final Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn nav__burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">
+            <span class="status-dot" aria-hidden="true"></span>
+            Software Engineering Student · UI/UX Designer
+          </p>
+          <h1 class="hero__title reveal">
+            <span class="hero__hi">Hi, I'm</span>
+            <span class="gradient-text">Mohammed Azzam</span><span class="hero__aka">— but you can call me <span class="hero__alias">Hox</span>.</span>
+          </h1>
+          <p class="hero__lead reveal">
+            I combine clean, object-oriented system design with interfaces people actually enjoy using —
+            from Java and data structures to high-fidelity Figma prototypes and web apps.
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#work" class="btn btn--primary">
+              View my work
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+          <ul class="hero__stack reveal" aria-label="Main tools">
+            <li>Java</li><li>Python</li><li>C</li><li>Flask</li><li>HTML/CSS</li><li>Figma</li>
+          </ul>
+        </div>
+
+        <figure class="code-card reveal" aria-label="A playful Java class describing Hox">
+          <div class="code-card__bar">
+            <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+            <span class="code-card__file">Hox.java</span>
+          </div>
+<pre class="code-card__body"><code><span class="k">public class</span> <span class="t">Hox</span> <span class="k">extends</span> <span class="t">Engineer</span> {
+  <span class="t">String</span> role = <span class="s">"SE Student"</span>;
+  <span class="t">String</span>[] loves = {
+    <span class="s">"OOP"</span>, <span class="s">"Data Structures"</span>,
+    <span class="s">"UI/UX"</span>, <span class="s">"Clean code"</span>
+  };
+
+  <span class="a">@Override</span>
+  <span class="k">void</span> <span class="f">learn</span>() {
+    <span class="k">while</span> (<span class="k">true</span>) <span class="f">explore</span>();
+  }
+}<span class="caret" aria-hidden="true"></span></code></pre>
+        </figure>
+      </div>
+
+      <a href="#work" class="scroll-hint" aria-label="Scroll to projects">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__kicker">01 — Selected work</p>
+          <h2 class="section__title">Featured projects</h2>
+          <p class="section__sub">A mix of product design, full-stack web development, and interactive teaching tools.</p>
+        </header>
+
+        <div class="projects">
+
+          <!-- Project: Rshfah Cafe UI -->
+          <article class="project reveal" style="--p-accent: var(--coffee)">
+            <div class="project__media">
+              <div class="carousel" id="cafe-carousel" aria-roledescription="carousel" aria-label="Rshfah cafe store screens">
+                <div class="carousel__track" tabindex="0">
+                  <button class="carousel__slide" type="button" data-index="0" aria-label="Enlarge: Home page">
+                    <img src="cafeUi/web/home-960.webp" srcset="cafeUi/web/home-960.webp 960w, cafeUi/web/home-1600.webp 1600w" sizes="(min-width: 960px) 680px, 100vw" width="960" height="624" alt="Rshfah home page with promotional banners" loading="lazy" decoding="async">
+                  </button>
+                  <button class="carousel__slide" type="button" data-index="1" aria-label="Enlarge: Products page">
+                    <img src="cafeUi/web/products-960.webp" srcset="cafeUi/web/products-960.webp 960w, cafeUi/web/products-1600.webp 1600w" sizes="(min-width: 960px) 680px, 100vw" width="960" height="624" alt="Products listing with search, sorting and product cards" loading="lazy" decoding="async">
+                  </button>
+                  <button class="carousel__slide" type="button" data-index="2" aria-label="Enlarge: Product detail page">
+                    <img src="cafeUi/web/product-960.webp" srcset="cafeUi/web/product-960.webp 960w, cafeUi/web/product-1600.webp 1600w" sizes="(min-width: 960px) 680px, 100vw" width="960" height="624" alt="Product detail page for a specialty coffee" loading="lazy" decoding="async">
+                  </button>
+                  <button class="carousel__slide" type="button" data-index="3" aria-label="Enlarge: Cart page">
+                    <img src="cafeUi/web/cart-960.webp" srcset="cafeUi/web/cart-960.webp 960w, cafeUi/web/cart-1600.webp 1600w" sizes="(min-width: 960px) 680px, 100vw" width="960" height="624" alt="Shopping cart with order summary and coupon field" loading="lazy" decoding="async">
+                  </button>
+                  <button class="carousel__slide" type="button" data-index="4" aria-label="Enlarge: Payment page">
+                    <img src="cafeUi/web/pay-960.webp" srcset="cafeUi/web/pay-960.webp 960w, cafeUi/web/pay-1600.webp 1600w" sizes="(min-width: 960px) 680px, 100vw" width="960" height="624" alt="Secure checkout with payment method selection" loading="lazy" decoding="async">
+                  </button>
                 </div>
-                <div class="p-6">
-                    <h4 class="text-xl font-bold text-blue-300 mb-2">CS50 Questions Web Application</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        A comprehensive web application developed as a graduation project for the CS50 course at Harvard University. It helps students practice by making questions and testing themselves.</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">Python/Flask</span>
-                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">HTML/CSS</span>
-                    </div>
-                </div>
+
+                <span class="carousel__counter" aria-live="polite">1 / 5</span>
+                <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous screen">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next screen">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <div class="carousel__dots" role="tablist" aria-label="Choose screen"></div>
+              </div>
             </div>
 
-            <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-green-500 transition-colors">
-                <div class="relative w-full aspect-video bg-gray-900 group">
-                        
-                    <div id="slide-counter" class="absolute top-3 right-3 bg-black/70 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full z-20 pointer-events-none shadow-lg border border-gray-600 backdrop-blur-sm">
-                        🔍 1 / 5
-                    </div>
+            <div class="project__body">
+              <p class="project__meta"><span>UI/UX Design</span><span>Figma</span></p>
+              <h3 class="project__title">Rshfah — Cafe Store UI</h3>
+              <p class="project__desc">
+                A complete, user-centric e-commerce interface for a specialty coffee brand, designed in Figma.
+                It covers the whole purchase journey — home, product listing, product details, cart and a
+                secure payment portal — in a right-to-left Arabic layout with an English toggle.
+              </p>
+              <ul class="tags">
+                <li>Figma</li><li>Wireframing</li><li>Hi-fi mockups</li><li>RTL design</li>
+              </ul>
+              <div class="project__actions">
+                <button class="link-arrow" type="button" data-open-gallery>
+                  Open full gallery
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
 
-                    <img src="cafeUi/Home.jpg" alt="Cafe UI Home" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-100 z-10" onclick="openModal(this.src)">
-                    <img src="cafeUi/pay.jpg" alt="Cafe UI Payment" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
-                    <img src="cafeUi/cart.jpg" alt="Cafe UI cart" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
-                    <img src="cafeUi/products.jpg" alt="Cafe UI products" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
-                    <img src="cafeUi/example of product.jpg" alt="Cafe UI example of product" class="cafe-slide absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 opacity-0 z-0" onclick="openModal(this.src)">
-
-                    <button onclick="prevSlide(event)" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/60 text-white w-10 h-10 rounded-full hover:bg-black hover:scale-110 transition-all z-20 flex items-center justify-center font-bold shadow-lg border border-gray-600">
-                        &#10094;
-                    </button>
-                    
-                    <button onclick="nextSlide(event)" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/60 text-white w-10 h-10 rounded-full hover:bg-black hover:scale-110 transition-all z-20 flex items-center justify-center font-bold shadow-lg border border-gray-600">
-                        &#10095;
-                    </button>
-                </div>
-
-                <div class="p-6">
-                    <h4 class="text-xl font-bold text-green-300 mb-2">Cafe Store UI Design</h4>
-                    <p class="text-gray-400 text-sm mb-4">A complete, user-centric interface designed in Figma. Features intuitive wireframes and high-fidelity mockups for a home page and secure payment portal.</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">Figma</span>
-                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">UI/UX</span>
-                    </div>
-                </div>
+          <!-- Project: CS50 -->
+          <article class="project project--flip reveal" style="--p-accent: var(--crimson)">
+            <div class="project__media">
+              <div class="video" data-yt="G_n28xgDdoE">
+                <button class="video__poster" type="button" aria-label="Play video: CS50 Questions Web Application demo">
+                  <img src="https://i.ytimg.com/vi/G_n28xgDdoE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+                  <span class="video__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+                  </span>
+                  <span class="video__label">Watch demo</span>
+                </button>
+              </div>
             </div>
 
-            <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors flex flex-col justify-between">
-                <div class="p-6">
-                    <h4 class="text-xl font-bold text-purple-300 mb-2">C-Thread Simulator</h4>
-                    <p class="text-gray-400 text-sm mb-6">An interactive web page designed to visually explain thread creation and the `fork()` and `wait()` commands in the C programming language.</p>
-                    <div class="flex gap-2 mb-6">
-                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">C Language</span>
-                        <span class="px-2 py-1 bg-gray-700 text-xs rounded text-gray-300">OS Concepts</span>
-                    </div>
-                </div>
-                <div class="px-6 pb-6 mt-auto">
-                    <a href="https://hoxdev.github.io/Fork-WaitSimulator/" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center py-2 px-4 bg-purple-600 hover:bg-purple-500 text-white rounded transition-colors font-medium">
-                        View Live Simulation 
-                    </a>
-                </div>
+            <div class="project__body">
+              <p class="project__meta"><span>Web App</span><span>Harvard CS50</span></p>
+              <h3 class="project__title">CS50 Questions Web Application</h3>
+              <p class="project__desc">
+                My final project for Harvard's CS50 course: a full web application that helps students
+                practise by writing their own questions and testing themselves on them.
+              </p>
+              <ul class="tags">
+                <li>Python</li><li>Flask</li><li>HTML/CSS</li>
+              </ul>
+              <div class="project__actions">
+                <a class="link-arrow" href="https://www.youtube.com/watch?v=G_n28xgDdoE" target="_blank" rel="noopener noreferrer">
+                  Watch on YouTube
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
             </div>
+          </article>
+
+          <!-- Project: C-Thread Simulator -->
+          <article class="project reveal" style="--p-accent: var(--violet)">
+            <div class="project__media">
+              <a class="sim-cover" href="https://hoxdev.github.io/Fork-WaitSimulator/" target="_blank" rel="noopener noreferrer" aria-label="Open the live C-Thread Simulator">
+                <svg viewBox="0 0 640 400" role="img" aria-labelledby="sim-title">
+                  <title id="sim-title">Diagram: a parent process calls fork(), the child exits, and the parent's wait() collects it</title>
+                  <defs>
+                    <pattern id="sim-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                      <path d="M32 0H0V32" class="sim-grid"/>
+                    </pattern>
+                    <marker id="sim-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0L10 5L0 10z" class="sim-arrowhead"/>
+                    </marker>
+                  </defs>
+                  <rect width="640" height="400" fill="url(#sim-grid)"/>
+
+                  <!-- edges -->
+                  <path d="M320 104 C320 150 180 140 180 186" class="sim-edge" marker-end="url(#sim-arrow)"/>
+                  <path d="M320 104 C320 150 460 140 460 186" class="sim-edge sim-edge--accent" marker-end="url(#sim-arrow)"/>
+                  <path d="M180 234 V292" class="sim-edge" marker-end="url(#sim-arrow)"/>
+                  <path d="M460 234 V292" class="sim-edge sim-edge--accent" marker-end="url(#sim-arrow)"/>
+                  <path d="M398 318 H252" class="sim-edge sim-edge--signal" marker-end="url(#sim-arrow)"/>
+
+                  <text x="232" y="146" class="sim-label">fork()</text>
+                  <text x="372" y="146" class="sim-label">fork()</text>
+                  <text x="325" y="306" class="sim-label sim-label--c" text-anchor="middle">SIGCHLD</text>
+
+                  <!-- nodes -->
+                  <g class="sim-node"><rect x="230" y="56" width="180" height="48" rx="12"/><text x="320" y="86" text-anchor="middle">main() · PID 1000</text></g>
+                  <g class="sim-node"><rect x="100" y="186" width="160" height="48" rx="12"/><text x="180" y="216" text-anchor="middle">parent · 1000</text></g>
+                  <g class="sim-node sim-node--accent"><rect x="380" y="186" width="160" height="48" rx="12"/><text x="460" y="216" text-anchor="middle">child · 1001</text></g>
+                  <g class="sim-node"><rect x="100" y="294" width="152" height="48" rx="12"/><text x="176" y="324" text-anchor="middle">wait(&amp;status)</text></g>
+                  <g class="sim-node sim-node--accent"><rect x="398" y="294" width="124" height="48" rx="12"/><text x="460" y="324" text-anchor="middle">exit(0)</text></g>
+                </svg>
+                <span class="sim-cover__cta">Open live simulation
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="project__body">
+              <p class="project__meta"><span>Interactive tool</span><span>Operating Systems</span></p>
+              <h3 class="project__title">C-Thread Simulator</h3>
+              <p class="project__desc">
+                An interactive web page that visually explains process creation in C — how
+                <code>fork()</code> duplicates a process and how <code>wait()</code> lets a parent
+                pause until its children finish.
+              </p>
+              <ul class="tags">
+                <li>C language</li><li>OS concepts</li><li>Interactive web</li>
+              </ul>
+              <div class="project__actions">
+                <a class="btn btn--primary btn--sm" href="https://hoxdev.github.io/Fork-WaitSimulator/" target="_blank" rel="noopener noreferrer">
+                  View live simulation
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
 
         </div>
-    </main>
+      </div>
+    </section>
 
-    <div id="image-modal" class="fixed inset-0 z-50 bg-black/95 hidden flex justify-center items-center p-4 sm:p-8 backdrop-blur-sm transition-opacity" onclick="closeModal()">
-        <button class="absolute top-6 right-8 text-white text-5xl hover:text-red-500 transition-colors">&times;</button>
-        <img id="modal-image" src="" alt="Enlarged UI" class="max-w-full max-h-full rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--alt" id="about">
+      <div class="container about">
+        <header class="section__head reveal">
+          <p class="section__kicker">02 — About</p>
+          <h2 class="section__title">Engineer by training,<br>designer at heart.</h2>
+        </header>
+
+        <div class="about__body reveal">
+          <p>
+            I'm a Software Engineering student with a strong foundation in object-oriented programming
+            (Java) and data structures, along with a keen interest in UI/UX design.
+          </p>
+          <p>
+            My work combines clean system architecture with engaging user experiences, alongside a growing
+            portfolio of web applications. I'm a strong believer in continuous learning and never stop
+            exploring new technologies.
+          </p>
+          <ul class="about__facts">
+            <li><strong>Studying</strong><span>Software Engineering</span></li>
+            <li><strong>Focus</strong><span>OOP · Data Structures · UI/UX</span></li>
+            <li><strong>Completed</strong><span>Harvard CS50</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__kicker">03 — Skills</p>
+          <h2 class="section__title">What I work with</h2>
+        </header>
+
+        <div class="skills">
+          <article class="skill-card reveal">
+            <div class="skill-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <h3>Software Engineering</h3>
+            <p>Designing maintainable systems with solid object-oriented principles and the right data structures.</p>
+            <ul class="tags"><li>Java</li><li>OOP</li><li>Data Structures</li><li>C</li></ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Turning ideas into user-centric flows, from low-fi wireframes to polished, high-fidelity prototypes.</p>
+            <ul class="tags"><li>Figma</li><li>Wireframing</li><li>Prototyping</li><li>RTL layouts</li></ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>Building web apps and interactive pages that make complex topics simple to explore.</p>
+            <ul class="tags"><li>Python</li><li>Flask</li><li>HTML</li><li>CSS</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact__glow" aria-hidden="true"></div>
+          <p class="section__kicker">04 — Contact</p>
+          <h2 class="contact__title">Let's build something <span class="gradient-text">great</span> together.</h2>
+          <p class="contact__text">
+            I'm open to new opportunities, collaborations, and conversations about software and design.
+            The best way to reach me is on GitHub.
+          </p>
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="https://github.com/hoxdev" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+              github.com/hoxdev
+            </a>
+            <!-- Add more contact links here, e.g.:
+            <a class="btn btn--ghost" href="mailto:you@example.com">Email me</a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Mohammed Azzam (Hox). Designed &amp; built with care.</p>
+      <a href="#top" class="footer__top">
+        Back to top
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
     </div>
+  </footer>
 
-    <footer class="text-center py-8 text-gray-600 text-sm">
-        <p>Made by Hox <span class="text-red-500">❤️</span></p>
-    </footer>
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Rshfah screen gallery">
+    <div class="lightbox__inner">
+      <button class="lightbox__close icon-btn" type="button" aria-label="Close gallery" data-close>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__img" src="" alt="">
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--prev icon-btn" type="button" aria-label="Previous image">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="lightbox__nav lightbox__nav--next icon-btn" type="button" aria-label="Next image">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </dialog>
 
-    <script>
-        // --- Carousel Logic ---
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.cafe-slide');
-
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.remove('opacity-0', 'z-0');
-                    slide.classList.add('opacity-100', 'z-10');
-                } else {
-                    slide.classList.add('opacity-0', 'z-0');
-                    slide.classList.remove('opacity-100', 'z-10');
-                }
-            });
-            document.getElementById('slide-counter').innerText = `🔍 ${currentSlide + 1} / ${slides.length}`;
-        }
-
-        function nextSlide(event) {
-            event.stopPropagation(); // Stops the modal from opening when clicking the arrow
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }
-
-        function prevSlide(event) {
-            event.stopPropagation();
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateCarousel();
-        }
-
-        // --- Full Screen Modal Logic ---
-        function openModal(imageSrc) {
-            document.getElementById('modal-image').src = imageSrc;
-            document.getElementById('image-modal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('image-modal').classList.add('hidden');
-        }
-    </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
