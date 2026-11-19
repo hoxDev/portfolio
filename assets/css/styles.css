@@ -1116,6 +1116,11 @@ code { font-family: var(--font-mono); font-size: .9em; }
   justify-content: space-between;
   gap: 12px 24px;
 }
+.footer__social { display: flex; gap: 20px; margin-left: auto; }
+@media (max-width: 560px) { .footer__social { margin-left: 0; } }
+.footer__social a { color: var(--muted); transition: color .2s; }
+.footer__social a:hover { color: var(--accent); }
+
 .footer__top {
   display: inline-flex;
   align-items: center;
